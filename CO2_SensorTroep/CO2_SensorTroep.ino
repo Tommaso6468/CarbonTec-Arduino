@@ -119,19 +119,17 @@ void loop() {
 
   display.clearDisplay();
 
-  display.setTextSize(1);             // Normal 1:1 pixel scale
   display.setTextColor(SSD1306_WHITE);        // Draw white text
   display.setCursor(0,10);             // Start at top-left corner
   display.setTextSize(3);             // Draw 2X-scale text
-  display.print(ppm); display.println(" ppm");
-
+  display.println(ppm); display.println("ppm");
   if(ppm >= 1000){
-    display.setCursor(64,40);
-    display.println(":(");
+    display.setCursor(90,40);
+    display.print(":(");
     digitalWrite(LED,HIGH);
   } else {
-    display.setCursor(64,40);
-    display.println(":)");
+    display.setCursor(90,40);
+    display.print(":)");
     digitalWrite(LED,LOW);
   }
 
