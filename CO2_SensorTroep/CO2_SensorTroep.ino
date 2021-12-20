@@ -3,6 +3,7 @@
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
 #include <MQ135.h>
+#include <Ethernet.h>
 
 #define SCREEN_WIDTH 128 // OLED display width, in pixels
 #define SCREEN_HEIGHT 64 // OLED display height, in pixels
@@ -105,17 +106,10 @@ void loop() {
   float ppm = mq135_sensor.getPPM();
   float correctedPPM = mq135_sensor.getCorrectedPPM(temperature, humidity);
 
-  Serial.print("MQ135 RZero: ");
-  Serial.print(rzero);
-  Serial.print("\t Corrected RZero: ");
-  Serial.print(correctedRZero);
-  Serial.print("\t Resistance: ");
-  Serial.print(resistance);
-  Serial.print("\t PPM: ");
-  Serial.print(ppm);
-  Serial.print("\t Corrected PPM: ");
   Serial.print(correctedPPM);
-  Serial.println("ppm");
+  Serial.print(",");
+  Serial.println(12345);
+
 
   display.clearDisplay();
 
