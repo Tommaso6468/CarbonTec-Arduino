@@ -16,7 +16,7 @@ if(isset($_GET["id"],$_GET["waarde"])) {
       die("Connection failed: " . $conn->connect_error);
    }
 
-   $sql = "INSERT INTO apparaat (serienummer,waardes) VALUES ($id,$waarde)";
+   $sql = "INSERT INTO apparaat (serienummer,waarde) VALUES ($id,$waarde)";
 
    if ($conn->query($sql) === TRUE) {
       echo "New record created successfully";
