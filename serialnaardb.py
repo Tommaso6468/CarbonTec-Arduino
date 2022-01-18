@@ -10,9 +10,9 @@ while True:
         waarde = decoded_bytes[0]
         serienummer = int(decoded_bytes[1])
         pload = {'id':serienummer,'waarde':waarde}
-        r = requests.get('http://192.168.178.48/insert_co2arduino.php',params = pload)
+        r = requests.get('http://127.0.0.1/insert_co2arduino.php',params = pload)
         print(r.text)
         
     except:
-        print("Keyboard Interrupt")
+        print("Keyboard Interrupt of Error")
         break
